@@ -13,4 +13,5 @@ export const routes: Routes = [
   { path: 'orders', component: OrderListComponent, canActivate: [authGuard] },
   { path: 'orders/new', component: OrderCreateComponent, canActivate: [authGuard] },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: '/dashboard' }
 ];
