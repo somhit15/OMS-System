@@ -57,16 +57,16 @@ export class AuthService {
   }
 
   private decodeAndSetUser(token: string) {
-    // try {
-    //   const decoded: any = jwtDecode(token);
-    //   this.currentUserSubject.next({
-    //     id: decoded.sub,
-    //     username: '',
-    //     role: decoded.role || UserRole.USER,
-    //     is_active: true
-    //   });
-    // } catch (e) {
-    //   this.logout();
-    // }
+    try {
+      const decoded: any = jwtDecode(token);
+      this.currentUserSubject.next({
+        id: decoded.sub,
+        username: '',
+        role: decoded.role || UserRole.USER,
+        is_active: true
+      });
+    } catch (e) {
+      this.logout();
+    }
   }
 }
